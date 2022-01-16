@@ -1,0 +1,8 @@
+.chat_area{
+    display: flex;
+    flex-grow: 1;
+    background-image: url(https://cdn.wallpapersafari.com/54/0/HluF7g.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center center;
+}

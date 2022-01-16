@@ -1,0 +1,29 @@
+.list-group-item.active {
+  background-color: #5e686b !important;
+}
+.list-group-item {
+  background-color: #323739 !important;
+  height: 7vh !important;
+  color: white !important;
+  border-bottom: 1px solid grey !important;
+  border-top: 1px solid grey !important;
+}
+.list-group-item:hover {
+  background-color: #5e686b !important;
+  color: white !important;
+}
+
+.nav-link {
+  background-color: #323739 !important;
+  color: white !important;
+  border: 1px solid transparent !important;
+  border-color: #dee2e6 #dee2e6 #fff !important;
+}
+
+.nav-tabs:hover {
+  background-color: #5e686b !important;
+}
+.nav-link.active {
+  color: white !important;
+  background-color: #5e686b !important;
+}

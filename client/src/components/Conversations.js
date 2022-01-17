@@ -7,7 +7,7 @@ export default function Conversations() {
 
   return (
     <div className="d-flex flex-wrap text-capitalize">
-      <div
+      {/* <div
         className=" bg-transparent p-2 mx-2 rounded"
         style={{
           wordBreak: "break-word",
@@ -19,11 +19,26 @@ export default function Conversations() {
         [ Click New Conversation to start a new conversation with available
         contacts or tap on any conversation to continue chatting. You can also
         add new contacts from the contacts panel. ]
-      </div>
+      </div> */}
       <ListGroup
         variant="flush"
         style={{ width: "100vw", display: "flex", flexWrap: "wrap" }}
       >
+        <div
+          style={{
+            display: "flex",
+            justfiyContent: "center",
+            flexWrap: "wrap",
+            marginLeft: "8vw",
+            marginBottom: "2vw",
+          }}
+        >
+          <img
+            height="100px"
+            src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-message-icon-for-your-project-png-image_5159719.jpg"
+            alt=""
+          />
+        </div>
         {conversations.map((conversation, index) => (
           <ListGroup.Item
             key={index}

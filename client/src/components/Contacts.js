@@ -6,25 +6,14 @@ export default function Contacts() {
   const { contacts } = useContacts();
 
   return (
-    <div className="d-flex flex-wrap text-capitalize">
-      <div
-        className="bg-transparent d-flex flex-wrap  p-2 mx-2 rounded"
-        style={{
-          wordBreak: "break-word",
-          marginBottom: "2vh",
-          width: "22vw",
-          color: "white",
-        }}
-      >
-        [ Here goes all your contacts. To start <br />
-        Conversation with any member please <br />
-        move to conversations Panel and select any <br />
-        contact to start conversation. ]
+    <div className="d-flex flex-wrap  text-capitalize">
+      <div style={{ display: "flex", justfiyContent: "center", flexWrap: "wrap",marginLeft:"8vw",marginBottom:"2vw" }}>
+        <img height="100px" src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-message-icon-for-your-project-png-image_5159719.jpg" alt="" />
       </div>
       <ListGroup
         variant="flush"
         className="text-capitalize d-flex flex-wrap flex-column"
-        style={{ width: "100vw",overflow:"scroll" }}
+        style={{ width: "100vw" }}
       >
         {contacts.map((contact, index) => (
           <ListGroup.Item key={contact.id}>

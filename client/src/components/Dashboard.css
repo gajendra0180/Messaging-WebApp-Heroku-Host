@@ -1,13 +1,14 @@
 .dashboard {
   display: flex;
   padding: 1em 0.2em;
-  background-image: url(https://i.pinimg.com/originals/e5/8c/28/e58c28f5b50cf13b6d8a481b65fa30b8.jpg);
-  background-position: center;
+  /* background-image: url(https://i.pinimg.com/originals/e5/8c/28/e58c28f5b50cf13b6d8a481b65fa30b8.jpg); */
+  background-size: cover;
+  background-color: black;
   background-repeat: none;
   zoom: 0.8;
-  /* flex-wrap: wrap; */
 }
 
 .chat_Panel_Nav:hover {
   background-color: rgba(255, 255, 255, 0.919);
+  color:rgba(255, 255, 255, 0.46);
 }

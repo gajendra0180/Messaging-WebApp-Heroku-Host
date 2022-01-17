@@ -6,7 +6,7 @@ WebSocket is a communication protocol which provides a full-duplex and low-laten
 This web application is made in React JS with custom hooks, custom components to facilitate the handling of the complities of project.
 
 
-#How to use
+# How to use
 Open the link to the app. You will be taken to the login page where you can either login or generate a new ID according to your preference.Your new ID generated will act as a Phone Number with which other users can connect with you.
 Now after  creating a new ID, you can add new contacts from the contact panel or start conversation with the existing contact members.Note:First you will have to add a contact to start chatting with that contact. After adding a new Contact go to the Conversation pane and click new conversation and select the person/persons with whom you would like to chat.
 If you select more than one person then a group of yours will be created with those contacts.

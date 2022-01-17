@@ -4,7 +4,7 @@ import Conversations from "./Conversations";
 import Contacts from "./Contacts";
 import NewConversationModal from "./NewConversationModal";
 import NewContactModal from "./NewContactModal";
-import './Sidebar.css'
+import "./Sidebar.css";
 
 const CONVERSATIOINS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
@@ -19,10 +19,10 @@ export default function Sidebar({ id }) {
   }
 
   return (
-    <div style={{maxWidth:"350px",backgroundColor:"#2a2f32"}} className="d-flex flex-column py-1">
+    <div className="sidebar_background d-flex">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav
-          variant="tabs"
+          // variant="tabs"
           className="justify-content-center"
           style={{ cursor: "pointer" }}
         >
@@ -33,20 +33,27 @@ export default function Sidebar({ id }) {
             <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
           </Nav.Item>
         </Nav>
-        <Tab.Content className="border-right-0 d-flex overflow-hidden flex-grow-1">
+        <Tab.Content
+          className="border-right-0 d-flex flex-grow-1"
+          style={{ overflowX: "hidden", overflowY: "visible" }}
+        >
           <Tab.Pane eventKey={CONVERSATIOINS_KEY}>
-            <div style={{marginTop:"2vh"}}></div>
+            <div style={{ marginTop: "2vh" }}></div>
             <Conversations />
           </Tab.Pane>
           <Tab.Pane eventKey={CONTACTS_KEY}>
-          <div style={{marginTop:"2vh"}}></div>
+            <div style={{ marginTop: "2vh" }}></div>
             <Contacts />
           </Tab.Pane>
         </Tab.Content>
-        <div className="p-2 border-top border-right small text-warning">
+        <div className="p-2 border-top border-right small">
           Your Id: <span className="text-white">{id}</span>
         </div>
-        <Button className="rounded-top bg-success border-0" onClick={() => setModalOpen(true)}>
+        <Button
+          className="rounded-top  border-0"
+          variant="danger"
+          onClick={() => setModalOpen(true)}
+        >
           New {conversationsOpen ? "Conversation" : "Contact"}
         </Button>
       </Tab.Container>

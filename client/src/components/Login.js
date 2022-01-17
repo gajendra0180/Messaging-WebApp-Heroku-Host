@@ -1,19 +1,23 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { v4 as uuidV4 } from "uuid";
+import "./Login.css";
 
 const PREFIX = "chatapp-clone-";
 export default function Login({ onIdSubmit }) {
+  const [showLoginInputField, setShowLoginInputField] = useState(false);
   const idRef = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (showLoginInputField == false) setShowLoginInputField(true);
 
     console.log(idRef.current.value);
+    if (!idRef.current.value) return;
 
     // receiving data  from  backend
     const GetData = async (e) => {
-      const res = await fetch("https://mern-chat-web-app0180.herokuapp.com/sendDataToFrontEnd", {
+       const res = await fetch("https://mern-chat-web-app0180.herokuapp.com/sendDataToFrontEnd", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +28,10 @@ export default function Login({ onIdSubmit }) {
         .then((text) => {
           console.log(JSON.parse(text));
           if (JSON.parse(text) == "No Such user") {
-            //  alert("No Such user exists in our database")
+            alert(
+              `We are not able to find an account with the id \"${idRef.current.value}\" `
+            );
+            idRef.current.value = "";
             console.log("No such user");
           } else {
             localStorage.setItem(
@@ -57,22 +64,51 @@ export default function Login({ onIdSubmit }) {
   function createNewId() {
     onIdSubmit(uuidV4());
   }
-
   return (
-    <Container
-      className="align-items-center d-flex"
-      style={{ height: "100vh" }}
-    >
-      <Form className="w-100" onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label className="label">Enter Your Id</Form.Label>
-          <Form.Control type="text" ref={idRef}></Form.Control>
-        </Form.Group>
-        <Button type="submit">Login</Button>
-        <Button onClick={createNewId} variant="secondary">
-          Create a new Id
-        </Button>
-      </Form>
-    </Container>
+    <div className="full">
+      <Container className="container">
+        <div className="circle circle1"></div>
+        <div className="circle circle2"></div>
+
+        <div className="form">
+          <div className="heading">
+            <h1>Enter Your Id to Login or Generate a New one</h1>
+          </div>
+          <Form
+            className="d-flex flex-column flex-wrap"
+            onSubmit={handleSubmit}
+          >
+            <Form.Group
+              className={`${
+                showLoginInputField ? "d-flex" : "d-none"
+              } flex-column flex-wrap mb-5`}
+              style={{ justifyContent: "center" }}
+            >
+              <Form.Label className="text-white">Enter Your Id</Form.Label>
+              <Form.Control
+                className="inp"
+                type="text"
+                ref={idRef}
+              ></Form.Control>
+            </Form.Group>
+            <Button
+              className="btn"
+              style={{ minWidth: "50vw" }}
+              variant="outline-success"
+              type="submit"
+            >
+              Login
+            </Button>
+            <Button
+              onClick={createNewId}
+              style={{ minWidth: "50vw" }}
+              variant="outline-secondary"
+            >
+              Create a new Id
+            </Button>
+          </Form>
+        </div>
+      </Container>
+    </div>
   );
 }

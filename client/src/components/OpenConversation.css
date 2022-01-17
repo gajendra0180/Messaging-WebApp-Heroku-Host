@@ -1,8 +1,22 @@
-.chat_area{
-    display: flex;
-    flex-grow: 1;
-    background-image: url(https://cdn.wallpapersafari.com/54/0/HluF7g.jpg);
-    background-size: contain;
-    background-attachment: fixed;
-    background-position: center center;
+.chat_area {
+  display: flex;
+  flex-grow: 1;
+  background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/06/26/49250/gradient-24.jpg);
+  background-size: cover;
+  opacity: 0.9;
+  background-position: center center;
+}
+
+.chat_Panel_Nav {
+  display: flex;
+  padding: 1vh;
+  padding-left: 2vw;
+  color: rgba(4, 0, 0, 0.46);
+  font-size: 20px;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.755);
+  /* background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/06/26/49250/gradient-24.jpg); */
+  background-position: center center;
+  transition: 0.5s;
+  cursor: pointer;
 }

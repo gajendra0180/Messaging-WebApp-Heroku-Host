@@ -3,7 +3,7 @@
 This is a messaging web app where multiple users can chat with each other individually or in groups(rooms) with each having their custom servers.To facilitate thses functionalities,Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers.
 WebSocket is a communication protocol which provides a full-duplex and low-latency channel between the server and the browser.
 
-This web application is made in React JS with custom hooks, custom components to facilitate the handling of the complities of project.
+This web application is made in React JS with custom hooks, custom components to facilitate the handling of the complexities of project.
 
 
 # How to use

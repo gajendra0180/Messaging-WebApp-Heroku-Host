@@ -1,3 +1,5 @@
+# Try it out here: https://mern-chat-web-app0180.herokuapp.com/
+
 # Messaging-WebApp-Heroku-Host
 
 This is a messaging web app where multiple users can chat with each other individually or in groups(rooms) with each having their custom servers.To facilitate thses functionalities,Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers.
